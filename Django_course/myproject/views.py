@@ -1,5 +1,6 @@
 #i have created this file = Izqia 
 from django.http import HttpResponse
+from django.shortcuts import render
 import os
 
 # def index(request):
@@ -7,12 +8,8 @@ import os
 
 
 def index(request):
-    return HttpResponse('''<h1>choose a pipeline from the list </h1> 
-    
-     <a href="/capitilizefirst">Capitilize First</a>
-     <a href="/removepun">Remove pun</a>
-    
-       ''')
+    params = {'name' : 'izqia' , 'country' : 'pakistan'}
+    return render(request , 'index.html', params)
 
 def removepun(request):
     return HttpResponse('''
