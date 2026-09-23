@@ -20,6 +20,8 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("" , views.index ,name='index')
-    # path("about" , views.about ,name='about'
+    path("" , views.index ,name='index'),
+    path("removepun" , views.removepun ,name='removepun'),
+    path("capitilizefirst" , views.capfirst ,name='capfirst'),
+    
 ]
