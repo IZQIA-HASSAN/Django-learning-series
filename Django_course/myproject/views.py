@@ -14,21 +14,26 @@ def analyze(request):
     removepun = (request.GET.get('removepun' ,'default'))
     print(removepun)
     print(djtext)
+
+    if removepun == "on":
+        punctuations = '''!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~'''
+        analyzed = ""
+        
+        
+        for char in djtext:
+                if char not in punctuations:
+                    analyzed = analyzed + char
+        
+        params = {
+                'purpose' : 'remove punctuation',
+                'analyzed_text':analyzed
+        
+            }
+        return render(request , "analyze.html" ,params )
+    else:
+         return HttpResponse("Check the box to remove punctuation")
     
-    punctuations = '''!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~'''
-    analyzed = ""
-
-
-    for char in djtext:
-        if char not in punctuations:
-            analyzed = analyzed + char
-
-    params = {
-        'purpose' : 'remove punctuation',
-        'analyzed_text':analyzed
-
-    }
-    return render(request , "analyze.html" ,params )
+    
 
 
 
