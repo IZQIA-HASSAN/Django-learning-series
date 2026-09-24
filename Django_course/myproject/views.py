@@ -12,6 +12,7 @@ def index(request):
     return render(request , 'index.html', params)
 
 def removepun(request):
+    print(request.GET.get('text' , 'default'))
     return HttpResponse('''
     <a href="/">Back</a>
     <p>this is remove pun function </p>
