@@ -37,7 +37,7 @@ def analyze(request):
         
             }
         djtext = analyzed
-        # return render(request , "analyze.html" ,params )
+        
 
     
     if(fullcaps == "on"):
@@ -50,7 +50,7 @@ def analyze(request):
              'analyzed_text':analyzed
         }
          djtext = analyzed
-        #  return render(request , "analyze.html" , params)
+        
 
     if(removeline == "on"):
              analyzed = ""
@@ -64,7 +64,7 @@ def analyze(request):
                  'analyzed_text':analyzed
             }
              djtext = analyzed
-            #  return render(request , "analyze.html" , params)
+            
 
     if(removeextraspace=="on"):
          analyzed = ""
@@ -78,7 +78,7 @@ def analyze(request):
              'analyzed_text':analyzed,
         }
          djtext = analyzed
-        #  return render(request , "analyze.html" , params)
+    
 
     if(countchar == "on"):
          count = 0
